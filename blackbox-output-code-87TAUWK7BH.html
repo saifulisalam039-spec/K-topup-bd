@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Topup Hub</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+        header { background: #333; color: white; text-align: center; padding: 1rem; }
+        .container { max-width: 600px; margin: 2rem auto; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        select, input, button { width: 100%; padding: 0.5rem; margin: 0.5rem 0; }
+        button { background: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Diamond Topup for All Games</h1>
+    </header>
+    <div class="container">
+        <form id="topupForm">
+            <label for="game">Select Game:</label>
+            <select id="game" required>
+                <option value="">Choose a game</option>
+                <option value="freefire">Free Fire</option>
+                <option value="pubgm">PUBG Mobile</option>
+                <option value="ml">Mobile Legends</option>
+                <!-- Add more games -->
+            </select>
+            
+            <label for="playerId">Player ID:</label>
+            <input type="text" id="playerId" placeholder="Enter your Player ID" required>
+            
+            <label for="package">Select Package:</label>
+            <select id="package" required>
+                <option value="">Choose package</option>
+                <option value="100">100 Diamonds - $1.00</option>
+                <option value="500">500 Diamonds - $5.00</option>
+                <option value="1000">1000 Diamonds - $10.00</option>
+            </select>
+            
+            <button type="submit">Proceed to Payment</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('topupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const game = document.getElementById('game').value;
+            const playerId = document.getElementById('playerId').value;
+            const package = document.getElementById('package').value;
+            // Simulate payment redirect (replace with real gateway like Stripe)
+            alert(`Processing topup for ${game}: ${package} diamonds to ID ${playerId}. Redirecting to payment...`);
+            // window.location.href = 'https://payment-gateway.com/pay'; // Integrate actual payment
+        });
+    </script>
+</body>
+</html>
